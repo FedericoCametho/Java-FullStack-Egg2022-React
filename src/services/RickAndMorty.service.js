@@ -16,4 +16,4 @@ class RickAndMortyService{
 
 }
 
-export default new RickAndMortyService();
+export default new RickAndMortyService()

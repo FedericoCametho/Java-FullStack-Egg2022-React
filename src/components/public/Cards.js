@@ -12,9 +12,15 @@ export const Cards = () => {
 
         RickAndMortyService.getAllCharacters()
             .then((data) => { setMascotas(data.results) })
-            .catch((error) => {console.log(error)});  
-    }, [mascotas])
+            .catch((error) => {console.log(error)}); 
+    }, [])
 
+    // el useEffect lleva en el array vacio la variable sobre la cual tiene que estar atento que cambie de estado, 
+    // anteriormente estaba [mascota] pero hace escuchas que consumen muchos recursos por lo que si cuanod se recarga 
+    // la pagina no es estrictamente necesario que este escuchando, mejor dejarlo vacio para no consumir recursos
+
+    
+    
     const cardList = mascotas.map((m) => <Card mascota={m} key={m.id} /> );
 
     return (
